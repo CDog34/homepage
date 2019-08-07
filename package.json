@@ -3,5 +3,12 @@
     "cssnano": "^4.1.10",
     "pug": "^2.0.4",
     "stylus": "^0.54.5"
+  },
+  "scripts": {
+    "build": "rimraf ./dist && parcel build index.pug"
+  },
+  "dependencies": {
+    "parcel": "^1.12.3",
+    "rimraf": "^2.6.3"
   }
 }
