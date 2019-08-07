@@ -1,0 +1,41 @@
+body
+  display: flex
+  align-items center
+  justify-content center
+  margin 0
+  background-color #fafafa
+
+p
+  margin: 0
+
+.dev-log
+  .date
+    margin-right 8px
+    opacity .4
+    font-size 12px
+
+  .cnt
+    font-size 16px
+
+  .log-item
+    position relative
+
+    &::before
+      content ''
+      position: absolute
+      width 6px
+      height 6px
+      border-radius: 4px
+      background-color #00eb00
+      left -16px
+      top: 50%
+      transform translateY(-50%)
+      animation bling 2s ease infinite
+
+    @keyframes bling
+      from
+        opacity 0
+      50%
+        opacity 1
+      to
+        opacity 0
