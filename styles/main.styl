@@ -4,6 +4,7 @@ body
   justify-content center
   margin 0
   background-color #fafafa
+  user-select none
 
 p
   margin: 0
@@ -11,7 +12,7 @@ p
 .dev-log
   .date
     margin-right 8px
-    opacity .4
+    color: rgba(0, 0, 0, 0.4)
     font-size 12px
 
   .cnt
@@ -19,17 +20,32 @@ p
 
   .log-item
     position relative
+    margin-top: 24px
+    white-space nowrap
+
+    &:not(.activated)::after
+      content ''
+      position: absolute
+      left -13.5px
+      bottom 8px
+      height 40px
+      width 1px
+      transform translateY(100%)
+      background-color: rgba(0, 0, 0, 0.4)
 
     &::before
       content ''
       position: absolute
-      width 6px
-      height 6px
-      border-radius: 4px
-      background-color #00eb00
+      width 5px
+      height 5px
+      border-radius: 3px
       left -16px
       top: 50%
       transform translateY(-50%)
+      background-color rgba(0, 0, 0, 0.4)
+
+    &.activated::before
+      background-color #00eb00
       animation bling 2s ease infinite
 
     @keyframes bling
